@@ -1,10 +1,11 @@
 # Agentic Gmail Assistant 🤖 📧
 
-An automated email management system built with **LangGraph**, **Google Gmail API**, and **OpenAI**. This agent monitors an inbox, categorizes incoming emails, drafts context-aware responses, and manages email states (read/archived) autonomously.
+An automated email management system built with **LangGraph**, **Google Gmail API**, and **OpenAI**. The same idea can be implemeneteted for other platforms such as Yahoo or Outlook APIs to monitor and manage emails across multiple platforms.
+This agent monitors an inbox, categorizes incoming emails, drafts context-aware responses, and manages email states (read/archived) autonomously.
 
 ## 🧠 Architecture
 The core logic is managed by a stateful graph that ensures reliability and prevents infinite processing loops.
-[Graph Architecture](./architecture_graph.png)
+![Graph Architecture](architecture_graph.png)
 
 
 ### The Workflow:
