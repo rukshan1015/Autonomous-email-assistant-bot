@@ -1,9 +1,9 @@
-# Agentic Gmail Assistant 🤖 📧
+# Agentic Gmail Assistant
 
 An automated email management system built with **LangGraph**, **Google Gmail API**, and **OpenAI**. The same idea can be implemeneteted for other platforms such as Yahoo or Outlook APIs to monitor and manage emails across multiple platforms.
 This agent monitors an inbox, categorizes incoming emails, drafts context-aware responses, and manages email states (read/archived) autonomously.
 
-## 🧠 Architecture
+## Architecture
 The core logic is managed by a stateful graph that ensures reliability and prevents infinite processing loops.
 ![Graph Architecture](architecture_graph.png)
 
@@ -15,18 +15,18 @@ The core logic is managed by a stateful graph that ensures reliability and preve
 4. **Send Email**: If valid, the assistant sends a personalized HTML reply.
 5. **Cleanup**: A final node that marks the email as `READ` and archives it to prevent duplicate processing.
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Orchestration**: LangGraph (StateGraph).
 * **LLM**: OpenAI (GPT-4o / GPT-4o-mini).
 * **API**: Google Cloud Console (Gmail API).
 * **Environment**: Python (Conda/ai_stable).
 
-## 🚀 Features
+## Features
 - **Idempotency**: Prevents duplicate replies by explicitly managing Gmail `UNREAD` labels.
 - **Stateful Management**: Uses a `TypedDict` to pass email metadata, draft content, and status flags across nodes.
 - **Spam Filtering**: Automatically archives automated or low-priority emails without human intervention.
 
-## 🔧 Setup & Installation
+## Setup & Installation
 
 1. **Enable Gmail API**: Create a project in the [Google Cloud Console](https://console.cloud.google.com/) and download your `credentials.json`.
 2. **Install Dependencies**:
@@ -41,9 +41,9 @@ Configure Environment: Add your OPENAI_API_KEY to your environment variables.
     ```bash
     python emailbot.py
     ```
-## 📝 MIT License
+## MIT License
 
-## 🛠️ Key Challenges & Solutions
+## Key Challenges & Solutions
 
 1. **The "Infinite Reply" Loop**
 - **The Problem**: During initial testing, the bot would find an unread email, reply to it, and then find the same email again 30 seconds later, sending hundreds of replies.
